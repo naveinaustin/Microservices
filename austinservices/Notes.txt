@@ -9,6 +9,16 @@ Bring the docker images up. Run from folder containing docker-compose.yml
 docker-compose up -d
 
 ----------------------------------
+Postgress Setup
+----------------------------------
+Login to PGAdmin using http://localhost:5050/
+Set a password
+
+Create a server. Specify the connection details as specified in docker-compose.yml
+Hostname will be the network name specified. Since these are installed in a container you can specify the network name here.
+If Postgress is install locally then you should use localhost
+
+----------------------------------
 Invoke Customer API
 ----------------------------------
 http://localhost:8089/api/v1/customers
