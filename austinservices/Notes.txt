@@ -1,0 +1,24 @@
+----------------------------------
+Command used to create the project
+----------------------------------
+mvn archetype:generate -DgroupId=com.naveinaustin -DartifactId=austinservices -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+
+----------------------------------
+Bring the docker images up. Run from folder containing docker-compose.yml
+----------------------------------
+docker-compose up -d
+
+----------------------------------
+Invoke Customer API
+----------------------------------
+http://localhost:8089/api/v1/customers
+
+docker-compose up -d
+
+{
+    "firstName": "navein",
+    "lastName": "fernandes",
+    "email": "test@gmail.com"
+}
+
+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
