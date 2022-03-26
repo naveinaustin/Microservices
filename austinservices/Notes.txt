@@ -31,4 +31,4 @@ docker-compose up -d
     "email": "test@gmail.com"
 }
 
-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
+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
