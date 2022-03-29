@@ -1,23 +1,33 @@
 package com.naveinaustin.customer;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class CustomerRegistrationRequest {
     private String firstName;
     private String lastName;
     private String email;
 
-    public CustomerRegistrationRequest() {
+    //Replaced with @NoArgsConstructor
+   /* public CustomerRegistrationRequest() {
 
-    }
+    }*/
 
-    public CustomerRegistrationRequest(String firstName,
+   //Replaced with @AllArgsConstructor
+    /*public CustomerRegistrationRequest(String firstName,
                                        String lastName,
                                        String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-    }
+    }*/
 
-    public String getFirstName() {
+    //Replaced with @Data
+    /*public String getFirstName() {
         return firstName;
     }
 
@@ -39,5 +49,5 @@ public class CustomerRegistrationRequest {
 
     public void setEmail(String email) {
         this.email = email;
-    }
+    }*/
 }

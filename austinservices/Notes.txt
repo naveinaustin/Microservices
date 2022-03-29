@@ -31,4 +31,41 @@ docker-compose up -d
     "email": "test@gmail.com"
 }
 
+-----------------------------------
+Different ways for Object Injection
+-----------------------------------
+1) Use @Autowired
+Since most object are Spring beans you can add an anotation on top of an object for it to get injected.
+    @Autowired
+    CustomerRepository customerRepository;
+
+2) Create a Constructor
+Here you create an instance variable and then make sure you have a constructor to initialize the variable. 
+Spring will automatically call the constructor to initialize he variable.
+
+    private final FraudCheckHistoryRepository fraudCheckHistoryRepository;
+
+    public FraudCheckService(FraudCheckHistoryRepository fraudCheckHistoryRepository) {
+        this.fraudCheckHistoryRepository = fraudCheckHistoryRepository;
+    }
+    
+3) Use lombok to create the constructor. 
+This is the same as option 2 except you do not write the constructor and leave it to lombok.
+Make sure to have @AllArgsConstructor at the class level
+
+    @AllArgsConstructor
+    @Service
+    public class FraudCheckService {
+        private final FraudCheckHistoryRepository fraudCheckHistoryRepository;
+        //No constructor defined.
+    }
+    
+  
+-----------------------------------  
+Errors
+-----------------------------------
+Got an error in FraudController on line return new FraudCheckResponse(isFraudulentCustomer);
+    Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of type: class com.naveinaustin.fraud.FraudCheckResponse]
+    
+The error came up because FraudCheckResponse did not have setter method for its variables. Either you need to add setters or add @Data from lombok to the class
 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

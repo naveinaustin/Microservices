@@ -10,6 +10,7 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>customer</module>
+    <module>fraud</module>
   </modules>
 
   <name>austinservices</name>
@@ -50,7 +51,6 @@
   <build>
     <pluginManagement>
       <plugins>
-        <!-- since this is a parent project we do not need anything here -->
         <plugin>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
